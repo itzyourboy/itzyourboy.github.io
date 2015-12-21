@@ -5,52 +5,66 @@
 <style>
 
 body {
-	background-color: #3b3b3b;
+  background-color: #3b3b3b;
+}
+
+#ft {
+  position:absolute;
+  bottom:0;
+  right: 10px;
+}
+
+#ft p {
+  text-align: right;
+  color: #cccccc;
+  font-size: 50%;
 }
 
 #bg {
-  position: fixed; 
-  top: -50%; 
-  left: -50%; 
-  width: 200%; 
-  height: 200%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-#bg img {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-  margin: auto; 
-  min-width: 50%;
-  min-height: 50%;
-}
-
-#footer {
-  position:absolute;
-  bottom:0;
-  right: 20px;
-  height:60px;   /* Height of the footer */
-}
-
-#footer p {
-  text-align: right;
-  color: #cccccc;
-}
+.bgwidth { width: 100%; }
+.bgheight { height: 100%; }
 
 </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(window).load(function() {    
+
+	var theWindow        = $(window),
+	    $bg              = $("#bg"),
+	    aspectRatio      = $bg.width() / $bg.height();
+	    			    		
+	function resizeBg() {
+		
+		if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
+		    $bg
+		    	.removeClass()
+		    	.addClass('bgwidth');
+		} else {
+		    $bg
+		    	.removeClass()
+		    	.addClass('bgheight');
+		}
+					
+	}
+	                   			
+	theWindow.resize(resizeBg).trigger("resize");
+
+});
+</script> 
+
 </head>
 <body>
 
-<div id="bg">
-	<p>
-		<img src="bg.jpg" alt="" >
-	</p>
-</div>
+<img src="bg.jpg" id="bg"/>
 
-<div id="footer">
+<div id="ft">
 	<p>
-		image credit: planetdestiny.com
+		image credit: planetdestiny.com.com3
 	</p>
 </div>
 
