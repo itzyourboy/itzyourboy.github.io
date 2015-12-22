@@ -32,31 +32,7 @@ html, body {
 </style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>
-$(window).load(function() {    
-
-	var theWindow        = $(window),
-	    $bg              = $("#bg"),
-	    aspectRatio      = $bg.width() / $bg.height();
-	    			    		
-	function resizeBg() {
-		
-		if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
-		    $bg
-		    	.removeClass()
-		    	.addClass('bgwidth');
-		} else {
-		    $bg
-		    	.removeClass()
-		    	.addClass('bgheight');
-		}
-					
-	}
-	                   			
-	theWindow.resize(resizeBg).trigger("resize");
-
-});
-</script> 
+<script type="text/javascript" src="resize.js"></script>
 
 </head>
 <body>
